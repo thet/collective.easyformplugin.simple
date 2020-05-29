@@ -3,43 +3,35 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.easyformplugin.simple">
+    i18n_domain="collective.easyformplugin.simple"
+    >
 
   <i18n:registerTranslations directory="locales" />
 
-  <!--
-    Be careful if you use general includeDependencies, it can have sideffects!
-    Better import explicite packages or configurations ;)
-  -->
-  <!--<includeDependencies package="." />-->
-
   <include package=".browser" />
-
   <include file="permissions.zcml" />
 
   <genericsetup:registerProfile
       name="default"
       title="collective.easyformplugin.simple"
-      directory="profiles/default"
       description="Installs the collective.easyformplugin.simple add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
       post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
       title="collective.easyformplugin.simple (uninstall)"
-      directory="profiles/uninstall"
       description="Uninstalls the collective.easyformplugin.simple add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
       post_handler=".setuphandlers.uninstall"
       />
 
   <utility
-      factory=".setuphandlers.HiddenProfiles"
       name="collective.easyformplugin.simple-hiddenprofiles"
+      factory=".setuphandlers.HiddenProfiles"
       />
-
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>
