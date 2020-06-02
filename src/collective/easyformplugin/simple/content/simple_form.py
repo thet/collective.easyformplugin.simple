@@ -1,7 +1,5 @@
 from collective.easyform.interfaces import IEasyForm
 from plone.autoform import directives
-
-
 from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope.interface import implementer
