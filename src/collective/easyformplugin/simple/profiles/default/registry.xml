@@ -14,4 +14,15 @@
     <value key="merge_with">default</value>
   </records>
 
+
+  <records interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+           prefix="plone"
+  >
+    <value key="displayed_types"
+           purge="False"
+    >
+      <element>Simple Form</element>
+    </value>
+  </records>
+
 </registry>
