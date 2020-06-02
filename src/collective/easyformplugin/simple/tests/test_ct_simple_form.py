@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.easyformplugin.simple.content.simple_form import ISimpleForm  # NOQA E501
-from collective.easyformplugin.simple.testing import COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING  # noqa
+from collective.easyformplugin.simple.testing import INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.testing import setRoles
@@ -16,7 +16,7 @@ import unittest
 
 class SimpleFormIntegrationTest(unittest.TestCase):
 
-    layer = COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""

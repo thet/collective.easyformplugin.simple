@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.easyformplugin.simple.testing import COLLECTIVE_EASYFORMPLUGIN_SIMPLE_ACCEPTANCE_TESTING  # noqa: E501
+from collective.easyformplugin.simple.testing import ACCEPTANCE_TESTING  # noqa: E501
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
@@ -22,7 +22,7 @@ def test_suite():
         suite.addTests([
             layered(
                 robottestsuite,
-                layer=COLLECTIVE_EASYFORMPLUGIN_SIMPLE_ACCEPTANCE_TESTING,
+                layer=ACCEPTANCE_TESTING,
             ),
         ])
     return suite

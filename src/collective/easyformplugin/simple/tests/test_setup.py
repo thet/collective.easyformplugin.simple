@@ -2,7 +2,7 @@
 """Setup tests for this package."""
 from collective.easyformplugin.simple.interfaces import IBrowserLayer
 from collective.easyformplugin.simple.testing import (
-    COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING,
+    INTEGRATION_TESTING,
 )  # noqa: E501
 from plone import api
 from plone.app.testing import setRoles
@@ -21,7 +21,7 @@ except ImportError:
 class TestSetup(unittest.TestCase):
     """Test that collective.easyformplugin.simple is properly installed."""
 
-    layer = COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -44,7 +44,7 @@ class TestSetup(unittest.TestCase):
 
 class TestUninstall(unittest.TestCase):
 
-    layer = COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer["portal"]
