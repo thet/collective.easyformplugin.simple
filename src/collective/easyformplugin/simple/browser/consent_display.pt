@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     tal:omit-tag=""
+     tal:define="items view/items;
+                 items python:list(items);
+                 single_checkbox python:len(items) == 1">
+<span class="option"
+      tal:repeat="item items"
+      tal:attributes="id python:single_checkbox and view.id or None">
+  <div class="" tal:content="structure item/rich_label">Rich Label</div>
+</span>
+
+</html>

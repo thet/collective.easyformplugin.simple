@@ -34,4 +34,13 @@
       factory=".setuphandlers.HiddenProfiles"
       />
 
+  <utility
+      name="collective.easyformplugin.simple.fields.Consent"
+      component=".fields.ConsentFactory"
+      />
+  <utility
+      name="collective.easyformplugin.simple.fields.Consent"
+      component=".fields.ConsentHandler"
+      />
+
 </configure>

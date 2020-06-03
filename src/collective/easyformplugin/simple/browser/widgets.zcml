@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    >
+  <class class=".widgets.ConsentWidget">
+    <require
+        permission="zope.Public"
+        interface="collective.easyformplugin.simple.interfaces.IConsentWidget"
+        />
+  </class>
+  <adapter
+      for="collective.easyformplugin.simple.interfaces.IConsent
+           *"
+      factory=".widgets.ConsentFieldWidget"
+      />
+
+  <z3c:widgetTemplate
+      template="consent_display.pt"
+      layer="collective.easyform.interfaces.IEasyFormLayer"
+      mode="display"
+      widget="collective.easyformplugin.simple.interfaces.IConsentWidget"
+      />
+  <z3c:widgetTemplate
+      template="consent_input.pt"
+      layer="collective.easyform.interfaces.IEasyFormLayer"
+      mode="input"
+      widget="collective.easyformplugin.simple.interfaces.IConsentWidget"
+      />
+  <configure package="collective.easyform.browser">
+    <z3c:widgetTemplate
+        template="empty.pt"
+        layer="collective.easyform.interfaces.IEasyFormLayer"
+        mode="hidden"
+        widget="collective.easyformplugin.simple.interfaces.IConsentWidget"
+        />
+  </configure>
+</configure>
