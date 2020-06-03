@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+  <browser:page
+      name="add-action"
+      for="collective.easyform.interfaces.IEasyFormActionsContext"
+      permission="cmf.ModifyPortalContent"
+      class=".actions.SimpleActionAddFormPage"
+      layer="..interfaces.IBrowserLayer"
+      />
+
+  <utility
+      name="collective.simpleform.actions.SimpleMailer"
+      component=".actions.SimpleMailerAction"
+      />
+  <utility
+      name="collective.simpleform.actions.SimpleMailer"
+      component=".actions.SimpleMailerHandler"
+      />
+
+</configure>

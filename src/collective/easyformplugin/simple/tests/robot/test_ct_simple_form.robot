@@ -10,7 +10,7 @@
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src collective.easyformplugin.simple.testing.COLLECTIVE_EASYFORMPLUGIN_SIMPLE_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src collective.easyformplugin.simple.testing.ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #

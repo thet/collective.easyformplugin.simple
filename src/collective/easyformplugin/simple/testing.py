@@ -10,7 +10,7 @@ from plone.testing import z2
 import collective.easyformplugin.simple
 
 
-class CollectiveEasyformpluginSimpleLayer(PloneSandboxLayer):
+class Layer(PloneSandboxLayer):
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
@@ -26,26 +26,26 @@ class CollectiveEasyformpluginSimpleLayer(PloneSandboxLayer):
         applyProfile(portal, 'collective.easyformplugin.simple:default')
 
 
-COLLECTIVE_EASYFORMPLUGIN_SIMPLE_FIXTURE = CollectiveEasyformpluginSimpleLayer()
+FIXTURE = Layer()
 
 
-COLLECTIVE_EASYFORMPLUGIN_SIMPLE_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(COLLECTIVE_EASYFORMPLUGIN_SIMPLE_FIXTURE,),
-    name='CollectiveEasyformpluginSimpleLayer:IntegrationTesting',
+INTEGRATION_TESTING = IntegrationTesting(
+    bases=(FIXTURE,),
+    name='Layer:IntegrationTesting',
 )
 
 
-COLLECTIVE_EASYFORMPLUGIN_SIMPLE_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(COLLECTIVE_EASYFORMPLUGIN_SIMPLE_FIXTURE,),
-    name='CollectiveEasyformpluginSimpleLayer:FunctionalTesting',
+FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(FIXTURE,),
+    name='Layer:FunctionalTesting',
 )
 
 
-COLLECTIVE_EASYFORMPLUGIN_SIMPLE_ACCEPTANCE_TESTING = FunctionalTesting(
+ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        COLLECTIVE_EASYFORMPLUGIN_SIMPLE_FIXTURE,
+        FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectiveEasyformpluginSimpleLayer:AcceptanceTesting',
+    name='Layer:AcceptanceTesting',
 )
