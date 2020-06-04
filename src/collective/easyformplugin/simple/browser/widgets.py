@@ -20,6 +20,7 @@ class ConsentWidget(SingleCheckBoxBoolWidget):
         result = super(ConsentWidget, self).items
         for record in result:
             record["rich_label"] = self.field.rich_label.output
+            record["checkbox_label"] = self.field.checkbox_label
         return result
 
 

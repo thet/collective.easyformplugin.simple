@@ -7,7 +7,7 @@
 <span class="option"
       tal:repeat="item items"
       tal:attributes="id python:single_checkbox and view.id or None">
-  <div class="" tal:content="structure item/rich_label">Rich Label</div>
+  <div class="" tal:condition="item/checked" tal:content="structure item/checkbox_label">Checkbox label</div>
 </span>
 
 </html>

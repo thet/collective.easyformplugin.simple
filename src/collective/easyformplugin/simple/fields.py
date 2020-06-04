@@ -14,11 +14,13 @@ class Consent(Bool):
     """ A field for requiring consent to a data protection policy or similar. """
 
     rich_label = RichTextValue(u"")
+    checkbox_label = u""
 
-    def __init__(self, rich_label=u"", **kw):
+    def __init__(self, rich_label=u"", checkbox_label=u"", **kw):
         if not isinstance(rich_label, RichTextValue):
             rich_label = RichTextValue(rich_label)
         self.rich_label = rich_label
+        self.checkbox_label = checkbox_label
         super(Consent, self).__init__(**kw)
 
     def validate(self, value):

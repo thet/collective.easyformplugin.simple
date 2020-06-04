@@ -15,6 +15,7 @@
           title="Required"
           tal:condition="item/required"
           i18n:attributes="title title_required;">&nbsp;</span>
+    <span class="formHelp" tal:content="structure item/description">Description</span>
   </label>
   <div class="" tal:content="structure item/rich_label">Rich Label</div>
   <input type="checkbox" id="" name="" class="" alt="" title=""
@@ -50,7 +51,7 @@
   />
   <label for=""
          tal:attributes="for item/id">
-    <span class="label" tal:content="structure item/description">Description</span>
+    <span class="label" tal:content="structure item/checkbox_label">Checkbox Label</span>
   </label>
  </span>
 </span>
