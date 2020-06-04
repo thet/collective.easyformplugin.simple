@@ -22,9 +22,10 @@ class Consent(Bool):
         super(Consent, self).__init__(**kw)
 
     def validate(self, value):
-        res = isChecked(value)
-        if res:
-            raise Invalid(res)
+        if self.required:
+            res = isChecked(value)
+            if res:
+                raise Invalid(res)
         super(Consent, self).validate(value)
 
 
