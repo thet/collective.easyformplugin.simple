@@ -11,7 +11,7 @@
   >Simple Form</property>
   <property name="description"
             i18n:translate=""
-  >A input form</property>
+  >An input form</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Simple Form</property>
