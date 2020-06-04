@@ -2,11 +2,20 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     >
+  <include package="plone.browserlayer" />
   <include file="widgets.zcml" />
 
   <browser:resource
       name="simpleform.css"
       file="simpleform.css"
+      />
+
+  <browser:page
+      name="edit"
+      for="collective.easyform.interfaces.IEasyFormFieldContext"
+      permission="cmf.ModifyPortalContent"
+      class=".fields.EditView"
+      layer="collective.easyformplugin.simple.interfaces.IBrowserLayer"
       />
 
 </configure>

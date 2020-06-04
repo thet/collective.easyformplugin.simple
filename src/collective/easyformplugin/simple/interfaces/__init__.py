@@ -3,8 +3,9 @@
 
 from .fields import IConsent
 from .fields import IConsentWidget
+from collective.easyform.interfaces import IEasyFormLayer
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
-class IBrowserLayer(IDefaultBrowserLayer):
+class IBrowserLayer(IEasyFormLayer):
     """Marker interface that defines a browser layer."""
