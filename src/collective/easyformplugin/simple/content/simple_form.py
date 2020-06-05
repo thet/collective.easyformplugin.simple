@@ -1,7 +1,10 @@
+from collective.easyform import easyformMessageFactory as _  # NOQA
 from collective.easyform.interfaces import IEasyForm
+from plone import api
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.supermodel import model
+from zope.i18n import translate
 from zope.interface import implementer
 
 
@@ -34,3 +37,7 @@ class ISimpleForm(IEasyForm):
 class SimpleForm(Container):
     """
     """
+
+    @property
+    def submitLabel(self):
+        return translate(_(u"default_submitLabel", u"Submit"))

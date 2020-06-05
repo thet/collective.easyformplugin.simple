@@ -36,4 +36,44 @@
         widget="collective.easyformplugin.simple.interfaces.IConsentWidget"
         />
   </configure>
+
+  <class class=".widgets.DividerWidget">
+    <require
+        permission="zope.Public"
+        interface="collective.easyformplugin.simple.interfaces.IDividerWidget"
+        />
+  </class>
+  <adapter
+      for="collective.easyformplugin.simple.interfaces.IDivider
+           *"
+      factory=".widgets.DividerFieldWidget"
+      />
+
+  <configure package="collective.easyform.browser">
+    <z3c:widgetTemplate
+        template="empty.pt"
+        layer="collective.easyform.interfaces.IEasyFormLayer"
+        mode="input"
+        widget="collective.easyformplugin.simple.interfaces.IDividerWidget"
+        />
+    <z3c:widgetTemplate
+        template="empty.pt"
+        layer="collective.easyform.interfaces.IEasyFormLayer"
+        mode="display"
+        widget="collective.easyformplugin.simple.interfaces.IDividerWidget"
+        />
+    <z3c:widgetTemplate
+        template="empty.pt"
+        layer="collective.easyform.interfaces.IEasyFormLayer"
+        mode="hidden"
+        widget="collective.easyformplugin.simple.interfaces.IDividerWidget"
+        />
+  </configure>
+  <browser:page
+      name="ploneform-render-widget"
+      for="collective.easyformplugin.simple.interfaces.IDividerWidget"
+      permission="zope.Public"
+      class=".widgets.DividerRenderWidget"
+      layer="collective.easyform.interfaces.IEasyFormLayer"
+      />
 </configure>
