@@ -11,6 +11,12 @@
       />
 
   <browser:page
+      name="view"
+      for="collective.easyformplugin.simple.content.simple_form.ISimpleForm"
+      permission="zope2.View"
+      class=".view.SimpleFormView"
+      />
+  <browser:page
       name="edit"
       for="collective.easyform.interfaces.IEasyFormFieldContext"
       permission="cmf.ModifyPortalContent"
