@@ -9,31 +9,6 @@
   <i18n:registerTranslations directory="locales" />
 
   <include package=".browser" />
-  <include package=".content" />
-  <include file="permissions.zcml" />
-
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.easyformplugin.simple"
-      description="Installs the collective.easyformplugin.simple add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      directory="profiles/default"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.easyformplugin.simple (uninstall)"
-      description="Uninstalls the collective.easyformplugin.simple add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      directory="profiles/uninstall"
-      post_handler=".setuphandlers.uninstall"
-      />
-
-  <utility
-      name="collective.easyformplugin.simple-hiddenprofiles"
-      factory=".setuphandlers.HiddenProfiles"
-      />
 
   <utility
       name="collective.easyformplugin.simple.fields.Consent"
@@ -51,6 +26,30 @@
   <utility
       name="collective.easyformplugin.simple.fields.Divider"
       component=".fields.DividerHandler"
+      />
+
+
+  <!-- profile setup -->
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.easyformplugin.simple"
+      description="Installs the collective.easyformplugin.simple add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.easyformplugin.simple (uninstall)"
+      description="Uninstalls the collective.easyformplugin.simple add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <utility
+      name="collective.easyformplugin.simple-hiddenprofiles"
+      factory=".setuphandlers.HiddenProfiles"
       />
 
 </configure>

@@ -5,23 +5,11 @@
   <include package="plone.browserlayer" />
   <include file="widgets.zcml" />
 
-  <browser:resource
-      name="simpleform.css"
-      file="simpleform.css"
-      />
-
   <browser:page
       name="view"
       for="collective.easyformplugin.simple.content.simple_form.ISimpleForm"
       permission="zope2.View"
       class=".view.SimpleFormView"
-      />
-  <browser:page
-      name="edit"
-      for="collective.easyform.interfaces.IEasyFormFieldContext"
-      permission="cmf.ModifyPortalContent"
-      class=".fields.EditView"
-      layer="collective.easyformplugin.simple.interfaces.IBrowserLayer"
       />
 
 </configure>
