@@ -1,8 +1,16 @@
+# -*- coding: utf-8 -*-
+"""Module where all interfaces, events and exceptions live."""
+from collective.easyform.interfaces import IEasyFormLayer
 from collective.easyformplugin.simple import _
 from plone.app.textfield import RichText
+from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 import z3c.form.interfaces
 import zope.schema.interfaces
+
+
+class IBrowserLayer(IEasyFormLayer):
+    """Marker interface that defines a browser layer."""
 
 
 class IConsent(zope.schema.interfaces.IBool):

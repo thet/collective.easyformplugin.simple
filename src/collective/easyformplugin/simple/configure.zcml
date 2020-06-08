@@ -1,14 +1,23 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.easyformplugin.simple"
     >
 
   <i18n:registerTranslations directory="locales" />
 
-  <include package=".browser" />
+  <include package="plone.browserlayer" />
+  <include file="widgets.zcml" />
+
+  <browser:page
+      name="view"
+      for="collective.easyform.interfaces.IEasyForm"
+      permission="zope2.View"
+      class=".view.SimpleFormView"
+      layer=".interfaces.IBrowserLayer"
+      />
 
   <utility
       name="collective.easyformplugin.simple.fields.Consent"
