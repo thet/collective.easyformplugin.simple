@@ -44,4 +44,13 @@
       component=".fields.ConsentHandler"
       />
 
+  <utility
+      name="collective.easyformplugin.simple.fields.Divider"
+      component=".fields.DividerFactory"
+      />
+  <utility
+      name="collective.easyformplugin.simple.fields.Divider"
+      component=".fields.DividerHandler"
+      />
+
 </configure>

@@ -16,3 +16,11 @@ class IConsent(zope.schema.interfaces.IBool):
 
 class IConsentWidget(z3c.form.interfaces.ISingleCheckBoxWidget):
     """ Consent Widget. """
+
+
+class IDivider(zope.schema.interfaces.IField):
+    """ Similar to a label, different display."""
+
+
+class IDividerWidget(z3c.form.interfaces.IWidget):
+    """ Divider Widget."""

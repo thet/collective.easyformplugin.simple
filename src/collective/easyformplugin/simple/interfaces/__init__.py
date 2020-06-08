@@ -3,6 +3,8 @@
 
 from .fields import IConsent
 from .fields import IConsentWidget
+from .fields import IDivider
+from .fields import IDividerWidget
 from collective.easyform.interfaces import IEasyFormLayer
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
